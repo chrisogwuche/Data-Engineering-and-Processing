@@ -1,0 +1,14 @@
+
+Assuming you have Two Tables in the database called users and phones
+And there is a field called user_id in the Phones table which is a foreign key
+referencing to a primary key called id in the users table.
+
+In the users table, there are fields called; id and name
+In the phones table, there are fields called; id, user_id
+
+
+
+SELECT u.id, u.name p.id AS phone_id FROM users u LEFT JOIN
+    phones p ON u.id = p.user_id
+ORDER BY
+    u.name DESC;
